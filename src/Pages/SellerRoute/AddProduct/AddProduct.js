@@ -13,7 +13,21 @@ const AddProduct = () => {
   } = useForm();
 
   const handleAddProduct = (data) => {
-    console.log(data);
+    const imgHostKey = "3fceca49b999da3171beae4a3e9eb312";
+    const date = new Date();
+    console.log(date);
+    const image = data.thumbnail[0];
+    const formData = new FormData();
+    formData.append("image", image);
+    const url = `https://api.imgbb.com/1/upload?&key=${imgHostKey}`;
+    fetch(url, {
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((imgData) => {
+        console.log(data);
+      });
   };
 
   return (
