@@ -48,16 +48,16 @@ const ProductCard = ({ product }) => {
             alt=""
           ></img>
         </div>
-        <h3 className="mt-5 font-semibold text-center text-lg text-black dark:text-white">
+        <h3 className="mt-5 font-semibold text-center text-xl text-black dark:text-white">
           {name}
         </h3>
         <div className="my-5 text-center text-blue-700 dark:text-white">
-          <p>Original Price :{IPrice}</p>
-          <p>Asking Price : {APrice}</p>
-          <p>Condition : {Condition}</p>
-          <p>Location : {location}</p>
-          <p>Seller : {sellerName}</p>
-          <p>Post : {postDate}</p>
+          <p className="font-bold">Original Price :{IPrice}</p>
+          <p className="font-bold">Asking Price : {APrice}</p>
+          <p className="font-bold">Condition : {Condition}</p>
+          <p className="font-bold">Location : {location}</p>
+          <p className="font-bold">Seller : {sellerName}</p>
+          <p className="font-bold">Post Date: {postDate}</p>
         </div>
 
         <button

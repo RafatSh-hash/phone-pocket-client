@@ -10,7 +10,7 @@ const Login = () => {
   const [currentUser, setCurrrentUser] = useState(null);
   const { loginWithEmailPass, googleLogin } = useContext(AuthContext);
   const [loginEmail, setLoginEmail] = useState("");
-  const [token] = useToken(loginEmail);
+  const [token] = useToken(loginEmail, true);
   const location = useLocation();
   const navigate = useNavigate();
   const from = location.state?.from?.pathname || "/";

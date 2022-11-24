@@ -1,16 +1,16 @@
-import { Avatar, Navbar, Tooltip } from "flowbite-react";
+import { Navbar, Tooltip } from "flowbite-react";
 import React from "react";
 import { useContext } from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../Context/Context";
-import { FaUserAlt } from "react-icons/fa";
 import logo from "../../../Assets/android-chrome-192x192.png";
 
 const Navigation = () => {
   const [theme, setTheme] = useState("light");
   const { user, logOut } = useContext(AuthContext);
+  const [dbUser, setDbUser] = useState(null);
   useEffect(() => {
     if (theme === "dark") {
       document.documentElement.classList.add("dark");
@@ -23,9 +23,23 @@ const Navigation = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
 
+  useEffect(() => {
+    fetch(`http://localhost:1000/dbuser?email=${user?.email}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setDbUser(data);
+        console.log(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [user?.email]);
+
   const handleLogout = () => {
     logOut()
-      .then(() => {})
+      .then(() => {
+        localStorage.removeItem("accessToken");
+      })
       .catch((error) => {
         console.log(error);
       });
@@ -38,8 +52,29 @@ const Navigation = () => {
           <Link to={"/home"} active={true}>
             Home
           </Link>
-          <Link to="/myorders">My Orders</Link>
-          <Navbar.Link to="/navbars">Services</Navbar.Link>
+          <>
+            {" "}
+            {dbUser && dbUser?.role === "user" ? (
+              <Link to="/myorders">Dashboard</Link>
+            ) : null}
+          </>
+
+          <>
+            {dbUser && dbUser?.role === "seller" ? (
+              <Link to={"/seller"}>Dashboard</Link>
+            ) : null}
+          </>
+          <>
+            {dbUser && dbUser?.role === "seller" ? (
+              <Link to={"/seller/myproducts"}>My Products</Link>
+            ) : null}
+          </>
+          <>
+            {dbUser && dbUser?.role === "seller" ? (
+              <Link to={"/seller/addproduct"}>Add Product</Link>
+            ) : null}
+          </>
+          <Navbar.Link to="/blog">Blog</Navbar.Link>
         </Navbar.Collapse>
 
         <Navbar.Brand href="/">
