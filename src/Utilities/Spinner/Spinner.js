@@ -3,7 +3,7 @@ import { Vortex } from "react-loader-spinner";
 
 const Spinner = () => {
   return (
-    <div>
+    <div className="w-[80px] h-[80px] mx-auto">
       <Vortex
         height="80"
         width="80"
