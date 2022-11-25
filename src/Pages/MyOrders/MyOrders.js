@@ -10,6 +10,7 @@ import OrderCard from "./OrderCard";
 const MyOrders = () => {
   const { user, loading } = useContext(AuthContext);
   const [orders, setOrders] = useState([]);
+  console.log(orders);
   console.log(user?.email);
   useEffect(() => {
     fetch(`http://localhost:1000/myorders?email=${user?.email}`)
@@ -24,14 +25,14 @@ const MyOrders = () => {
     <div>
       {loading && <Spinner></Spinner>}
       <div className="w-4/5 mx-auto my-20">
-        {orders.length === 0 && (
+        {orders.length === 0 ? (
           <h1 className="text-4xl font-bold text-center text-red-500">
             You haven't booked any order yet.
             <span className="text-blue-500 underline">
               <Link to={"/"}>Order Now</Link>
             </span>
           </h1>
-        )}
+        ) : null}
       </div>
       <div>
         <h1 className="text-3xl font-semibold text-center dark:text-white text-red-500">

@@ -12,6 +12,7 @@ const ProductCard = ({ product }) => {
   const clicked = () => {
     setModalOn(true);
   };
+  console.log(user);
 
   const {
     APrice,

@@ -6,10 +6,7 @@ const BookingModal = ({ setModalOn, setChoice, user, product }) => {
     setChoice(true);
     setModalOn(false);
   };
-  //   const handleCancelClick = () => {
-  //     setChoice(false);
-  //     setModalOn(false);
-  //   };
+  console.log(user);
 
   const handleSubmit = (event) => {
     event.preventDefault();
