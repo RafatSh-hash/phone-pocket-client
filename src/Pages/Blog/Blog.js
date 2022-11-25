@@ -13,13 +13,13 @@ const Blog = () => {
       <div
         data-aos="fade-right"
         id="div1"
-        className="border-4 border-slate-900 border-double bg-gradient-to-bl from-blue-200 via-indigo-300 to-gray-300 shadow-gray-700 shadow-2xl rounded-2xl p-8 text-left w-5/6 mx-auto mt-10"
+        className="border-4 border-slate-900 border-double  to-gray-300 shadow-gray-700 shadow-2xl rounded-2xl p-8 text-left w-5/6 mx-auto mt-10"
       >
         <h3 className="font-semibold ">
           Ques : What are the different ways to manage
           <span className="text-red-500"> State</span>state in React ?
         </h3>
-        <p>
+        <p className="my-6">
           <span className="underline">Ans</span> : In React apps, there are
           several ways to handle the state. Let us briefly explore a few of them
           in this part.Keeping such data in the URL allows users to share deep
@@ -67,13 +67,13 @@ const Blog = () => {
       </div>
       <div
         data-aos="fade-left"
-        className="border-4 border-slate-900 border-double bg-gradient-to-bl from-blue-200 via-indigo-300 to-gray-300 shadow-gray-700 shadow-2xl rounded-2xl p-8 text-left w-5/6 mx-auto mt-10"
+        className="border-4 border-slate-900 border-double  shadow-gray-700 shadow-2xl rounded-2xl p-8 text-left w-5/6 mx-auto mt-10"
       >
         <h3 className="font-semibold ">
           Ques : How does
           <span className="text-red-500"> Prototypical Inheritense</span> work ?
         </h3>
-        <p>
+        <p className="my-6">
           <span className="underline">Ans</span> : The Prototypal Inheritance is
           a feature in javascript used to add methods and properties in objects.
           It is a method by which an object can inherit the properties and
@@ -103,14 +103,14 @@ const Blog = () => {
       </div>
       <div
         data-aos="fade-right"
-        className="border-4 border-slate-900 border-double bg-gradient-to-bl from-blue-200 via-indigo-300 to-gray-300 shadow-gray-700 shadow-2xl rounded-2xl p-8 text-left w-5/6 mx-auto mt-10"
+        className="border-4 border-slate-900 border-double shadow-gray-700 shadow-2xl rounded-2xl p-8 text-left w-5/6 mx-auto mt-10"
       >
         <h3 className="font-semibold ">
           Ques : What is
           <span className="text-red-500"> Unit Test </span> and why should we
           write Unit Test ?
         </h3>
-        <p>
+        <p className="my-6">
           <span className="underline">Ans</span> : Unit testing is a type of
           software testing where individual units or software components are
           tested. Its purpose is to validate that each unit of code performs as
@@ -150,7 +150,7 @@ const Blog = () => {
       </div>
       <div
         data-aos="fade-left"
-        className="border-4 border-slate-900 border-double bg-gradient-to-bl from-gray-200 via-gray-300 to-gray-300 shadow-gray-700 shadow-2xl rounded-2xl p-8 text-left w-5/6 mx-auto mt-10"
+        className="border-4 border-slate-900 border-double  shadow-gray-700 shadow-2xl rounded-2xl p-8 text-left w-5/6 mx-auto mt-10"
       >
         <h3 className="font-semibold ">
           Ques : What Are the difference between
@@ -158,7 +158,7 @@ const Blog = () => {
           <span className="text-red-500"> Angular </span>,{" "}
           <span className="text-red-500"> Vue </span> ?
         </h3>
-        <p>
+        <p className="my-6">
           <span className="underline">Ans</span> : If the choice you’re making
           is based on Angular vs React alone, then you’ll simply need to
           consider the pros and cons discussed for those libraries in this post.
