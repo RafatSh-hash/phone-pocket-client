@@ -3,6 +3,8 @@ import { createBrowserRouter } from "react-router-dom";
 import AdminLayout from "../Main/AdminLayout";
 import Main from "../Main/Main";
 import SellerLayout from "../Main/SellerLayout";
+import AllSellers from "../Pages/AdminRoute/AllSellers/AllSellers";
+import AllUsers from "../Pages/AdminRoute/AllUsers/AllUsers";
 import Blog from "../Pages/Blog/Blog";
 import CategoryProducts from "../Pages/CategoryProducts/CategoryProducts";
 import Error from "../Pages/Error/Error";
@@ -102,6 +104,19 @@ export const routes = createBrowserRouter([
     path: "/admin",
     element: <AdminLayout></AdminLayout>,
     errorElement: <Error></Error>,
-    children: [{}],
+    children: [
+      {
+        path: "/admin",
+        element: <AllUsers></AllUsers>,
+      },
+      {
+        path: "/admin/allusers",
+        element: <AllUsers></AllUsers>,
+      },
+      {
+        path: "/admin/allsellers",
+        element: <AllSellers></AllSellers>,
+      },
+    ],
   },
 ]);

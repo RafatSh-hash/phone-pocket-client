@@ -73,7 +73,7 @@ const Registration = () => {
       const user = { name, email, role };
       console.log(user);
       fetch("http://localhost:1000/users", {
-        method: "POST",
+        method: "PUT",
         headers: {
           "content-type": "application/json",
         },

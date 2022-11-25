@@ -59,6 +59,16 @@ const Navigation = () => {
             Home
           </Link>
           <>
+            {dbUser && dbUser?.role === "admin" ? (
+              <Link to="/admin/allusers">All Users</Link>
+            ) : null}
+          </>
+          <>
+            {dbUser && dbUser?.role === "admin" ? (
+              <Link to="/admin/allsellers">All Sellers</Link>
+            ) : null}
+          </>
+          <>
             {" "}
             {dbUser && dbUser?.role === "user" ? (
               <Link to="/myorders">Dashboard</Link>
