@@ -11,7 +11,7 @@ const Blog = () => {
     <div data-aos="fade-up" className="p-5 mt-0">
       {/* <h1>Hello Blog</h1> */}
       <div
-        data-aos="fade-up"
+        data-aos="fade-right"
         id="div1"
         className="border-4 border-slate-900 border-double bg-gradient-to-bl from-blue-200 via-indigo-300 to-gray-300 shadow-gray-700 shadow-2xl rounded-2xl p-8 text-left w-5/6 mx-auto mt-10"
       >
@@ -66,7 +66,7 @@ const Blog = () => {
         </p>
       </div>
       <div
-        data-aos="fade-up"
+        data-aos="fade-left"
         className="border-4 border-slate-900 border-double bg-gradient-to-bl from-blue-200 via-indigo-300 to-gray-300 shadow-gray-700 shadow-2xl rounded-2xl p-8 text-left w-5/6 mx-auto mt-10"
       >
         <h3 className="font-semibold ">
@@ -102,7 +102,7 @@ const Blog = () => {
         </p>
       </div>
       <div
-        data-aos="fade-up"
+        data-aos="fade-right"
         className="border-4 border-slate-900 border-double bg-gradient-to-bl from-blue-200 via-indigo-300 to-gray-300 shadow-gray-700 shadow-2xl rounded-2xl p-8 text-left w-5/6 mx-auto mt-10"
       >
         <h3 className="font-semibold ">
@@ -149,8 +149,8 @@ const Blog = () => {
         </p>
       </div>
       <div
-        data-aos="fade-up"
-        className="border-4 border-slate-900 border-double bg-gradient-to-bl from-blue-200 via-indigo-300 to-gray-300 shadow-gray-700 shadow-2xl rounded-2xl p-8 text-left w-5/6 mx-auto mt-10"
+        data-aos="fade-left"
+        className="border-4 border-slate-900 border-double bg-gradient-to-bl from-gray-200 via-gray-300 to-gray-300 shadow-gray-700 shadow-2xl rounded-2xl p-8 text-left w-5/6 mx-auto mt-10"
       >
         <h3 className="font-semibold ">
           Ques : What Are the difference between
