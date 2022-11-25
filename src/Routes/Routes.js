@@ -124,7 +124,11 @@ export const routes = createBrowserRouter([
       },
       {
         path: "/admin/allsellers",
-        element: <AllSellers></AllSellers>,
+        element: (
+          <AdminRoute>
+            <AllSellers></AllSellers>
+          </AdminRoute>
+        ),
       },
     ],
   },

@@ -2,6 +2,20 @@ import { Button } from "flowbite-react";
 import React from "react";
 
 const SellerCard = ({ seller }) => {
+  const handleDeleteSeller = (seller) => {
+    console.log(seller);
+    fetch(`http://localhost:1000/sellers/${seller?._id}`, {
+      method: "DELETE",
+      headers: {
+        authorization: `bearer ${localStorage.getItem("accessToken")}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+  };
+
   return (
     <div className="w-3/5 shadow-2xl rounded-2xl mx-auto border-2 bg-gray-200 dark:bg-white dark:text-black border-black p-5 my-5 flex items-center justify-between">
       <div className="flex justify-between w-3/5">
@@ -13,7 +27,12 @@ const SellerCard = ({ seller }) => {
           <Button gradientMonochrome="teal">Verify</Button>
         </div>
         <div className="mx-2">
-          <Button gradientMonochrome="failure">Delete</Button>
+          <Button
+            onClick={() => handleDeleteSeller(seller)}
+            gradientMonochrome="failure"
+          >
+            Delete
+          </Button>
         </div>
       </div>
     </div>
