@@ -131,7 +131,7 @@ const Navigation = () => {
             </>
           )}
           <div className="">
-            <Tooltip content={user?.displayName}>
+            <Tooltip content={dbUser?.name}>
               <img
                 className="w-11 h-11  rounded-full mx-3"
                 src={user?.photoURL}
