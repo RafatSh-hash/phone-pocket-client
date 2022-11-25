@@ -27,6 +27,7 @@ const BookingModal = ({ setModalOn, setChoice, user, product }) => {
       phone,
       location,
       email: user.email,
+      sellerEmail: product.sellerEmail,
     };
     console.log(booking);
     fetch("http://localhost:1000/bookings", {

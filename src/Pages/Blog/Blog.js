@@ -17,7 +17,7 @@ const Blog = () => {
       >
         <h3 className="font-semibold ">
           Ques : What are the different ways to manage
-          <span className="text-red-500"> State</span>state in React ?
+          <span className="text-red-500"> State</span> in React ?
         </h3>
         <p className="my-6">
           <span className="underline">Ans</span> : In React apps, there are
@@ -152,10 +152,10 @@ const Blog = () => {
         data-aos="fade-left"
         className="border-4 border-slate-900 border-double  shadow-gray-700 shadow-2xl rounded-2xl p-8 text-left w-5/6 mx-auto mt-10"
       >
-        <h3 className="font-semibold ">
+        <h3 className="font-bold ">
           Ques : What Are the difference between
-          <span className="text-red-500"> React </span>,{" "}
-          <span className="text-red-500"> Angular </span>,{" "}
+          <span className="text-red-500"> React </span>,
+          <span className="text-red-500"> Angular </span>,
           <span className="text-red-500"> Vue </span> ?
         </h3>
         <p className="my-6">
