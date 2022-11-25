@@ -2,6 +2,7 @@ import React from "react";
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../Main/Main";
 import SellerLayout from "../Main/SellerLayout";
+import Blog from "../Pages/Blog/Blog";
 import CategoryProducts from "../Pages/CategoryProducts/CategoryProducts";
 import Error from "../Pages/Error/Error";
 import Home from "../Pages/Home/Home";
@@ -27,6 +28,10 @@ export const routes = createBrowserRouter([
         path: "/home",
         loader: () => fetch("http://localhost:1000/allproducts"),
         element: <Home></Home>,
+      },
+      {
+        path: "/blog",
+        element: <Blog></Blog>,
       },
       {
         path: "/category/:id",

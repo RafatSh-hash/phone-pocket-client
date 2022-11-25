@@ -19,7 +19,7 @@ const Iphone = () => {
   return (
     <div>
       <div className="lg:flex lg:flex-row sm:w-full sm:flex sm:flex-col">
-        {products.map((product) => (
+        {products.slice(0, 3).map((product) => (
           <IphoneCard key={product._id} product={product}></IphoneCard>
         ))}
       </div>

@@ -1,11 +1,14 @@
 import React from "react";
+import { useState } from "react";
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../../Context/Context";
 import SmallSpinner from "../../../Utilities/SmallSpinner/SmallSpinner";
 
 const AddProduct = () => {
-  const { loading } = useContext(AuthContext);
+  const { loading, user } = useContext(AuthContext);
+  //   const [CatergoryId, setCatergoryId] = useState(null);
+
   const {
     register,
     formState: { errors },
@@ -15,7 +18,8 @@ const AddProduct = () => {
   const handleAddProduct = (data) => {
     const imgHostKey = "3fceca49b999da3171beae4a3e9eb312";
     const date = new Date();
-    console.log(date);
+    // console.log(date);
+
     const image = data.thumbnail[0];
     const formData = new FormData();
     formData.append("image", image);
@@ -26,7 +30,49 @@ const AddProduct = () => {
     })
       .then((res) => res.json())
       .then((imgData) => {
-        console.log(data);
+        if (imgData.success) {
+          const product = {
+            brand: data.brand,
+            name: data.name,
+            CatId: parseInt(data.CatId),
+            IPrice: data.IPrice,
+            APrice: data.APrice,
+            Ram: data.Ram,
+            Storage: data.Storage,
+            Battery: data.Battery,
+            Condition: data.Condition,
+            thumbnail: imgData.data.url,
+            location: data.Location,
+            postDate: date.toString().slice(0, 15),
+            sellerName: data.sellerName,
+            sellerEmail: user?.email,
+          };
+          //   if (data.brand === "google") {
+          //     setCatergoryId(1);
+          //   }
+          //   if (data.brand === "samsung") {
+          //     setCatergoryId(2);
+          //   }
+          //   if (data.brand === "iphone") {
+          //     setCatergoryId(3);
+          //   }
+          console.log(product);
+          fetch("http://localhost:1000/products", {
+            method: "PUT",
+            headers: {
+              "content-type": "application/json",
+              authorization: `bearer ${localStorage.getItem("accessToken")}`,
+            },
+            body: JSON.stringify(product),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              console.log(data);
+            })
+            .catch((error) => {
+              console.log(error);
+            });
+        }
       });
   };
 
@@ -49,8 +95,10 @@ const AddProduct = () => {
               type="text"
               className="input input-bordered dark:bg-gray-600 dark:text-white w-full  rounded-lg"
             />
-            {errors.name && (
-              <p className="text-red-500 text-center">{errors.name?.message}</p>
+            {errors.sellerName && (
+              <p className="text-red-500 text-center">
+                {errors.sellerName?.message}
+              </p>
             )}
           </div>
           <div className="form-control w-full my-7">
@@ -65,8 +113,10 @@ const AddProduct = () => {
               type="text"
               className="input input-bordered dark:bg-gray-600 dark:text-white w-full  rounded-lg"
             />
-            {errors.name && (
-              <p className="text-red-500 text-center">{errors.name?.message}</p>
+            {errors.IPrice && (
+              <p className="text-red-500 text-center">
+                {errors.IPrice?.message}
+              </p>
             )}
           </div>
           <div className="form-control w-full my-7">
@@ -81,8 +131,10 @@ const AddProduct = () => {
               type="text"
               className="input input-bordered dark:bg-gray-600 dark:text-white w-full  rounded-lg"
             />
-            {errors.name && (
-              <p className="text-red-500 text-center">{errors.name?.message}</p>
+            {errors.APrice && (
+              <p className="text-red-500 text-center">
+                {errors.APrice?.message}
+              </p>
             )}
           </div>
           <div className="form-control w-full my-7">
@@ -97,8 +149,8 @@ const AddProduct = () => {
               type="text"
               className="input input-bordered dark:bg-gray-600 dark:text-white w-full  rounded-lg"
             />
-            {errors.name && (
-              <p className="text-red-500 text-center">{errors.name?.message}</p>
+            {errors.Ram && (
+              <p className="text-red-500 text-center">{errors.Ram?.message}</p>
             )}
           </div>
           <div className="form-control w-full my-7">
@@ -113,8 +165,10 @@ const AddProduct = () => {
               type="text"
               className="input input-bordered dark:bg-gray-600 dark:text-white w-full  rounded-lg"
             />
-            {errors.name && (
-              <p className="text-red-500 text-center">{errors.name?.message}</p>
+            {errors.Storage && (
+              <p className="text-red-500 text-center">
+                {errors.Storage?.message}
+              </p>
             )}
           </div>
           <div className="form-control w-full my-7">
@@ -129,8 +183,10 @@ const AddProduct = () => {
               type="text"
               className="input input-bordered dark:bg-gray-600 dark:text-white w-full  rounded-lg"
             />
-            {errors.name && (
-              <p className="text-red-500 text-center">{errors.name?.message}</p>
+            {errors.Battery && (
+              <p className="text-red-500 text-center">
+                {errors.Battery?.message}
+              </p>
             )}
           </div>
           <div className="form-control w-full my-7">
@@ -145,8 +201,10 @@ const AddProduct = () => {
               type="text"
               className="input input-bordered dark:bg-gray-600 dark:text-white w-full  rounded-lg"
             />
-            {errors.name && (
-              <p className="text-red-500 text-center">{errors.name?.message}</p>
+            {errors.Condition && (
+              <p className="text-red-500 text-center">
+                {errors.Condition?.message}
+              </p>
             )}
           </div>
           <div className="form-control w-full my-7">
@@ -161,11 +219,28 @@ const AddProduct = () => {
               type="text"
               className="input input-bordered dark:bg-gray-600 dark:text-white w-full  rounded-lg"
             />
+            {errors.Location && (
+              <p className="text-red-500 text-center">
+                {errors.Location?.message}
+              </p>
+            )}
+          </div>
+          <div className="form-control w-full my-7">
+            <label className="label">
+              <span className="label-text">Device Name</span>
+            </label>
+            <input
+              {...register("name", {
+                required: "Device Name is required",
+                maxLength: 20,
+              })}
+              type="text"
+              className="input input-bordered dark:bg-gray-600 dark:text-white w-full  rounded-lg"
+            />
             {errors.name && (
               <p className="text-red-500 text-center">{errors.name?.message}</p>
             )}
           </div>
-
           <div className="form-control w-full my-7">
             <label className="label">
               <span className="label-text">Product Thumbnail</span>
@@ -178,30 +253,39 @@ const AddProduct = () => {
               type="file"
               className="input input-bordered w-full my-5 dark:bg-slate-500 dark:text-white rounded-lg"
             />
-            {errors.image && (
+            {errors.thumbnail && (
               <p className="text-red-500 text-center">
-                {errors.image?.message}
+                {errors.thumbnail?.message}
               </p>
             )}
           </div>
-
           <label
-            htmlFor="role"
+            htmlFor="brand"
             className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
           >
             Select a Brand
           </label>
           <select
             id="name"
-            name="name"
-            {...register("name")}
+            name="brand"
+            {...register("brand")}
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           >
-            <option value="google">Google</option>
-            <option value="samsung">Samsung</option>
-            <option value="iphone">iPhone</option>
+            <option value="google">google</option>
+            <option value="samsung">samsung</option>
+            <option value="iphone">iphone</option>
           </select>
-
+          <div className="flex justify-between">
+            <div>
+              <input type="radio" value="1" {...register("CatId")} />1
+            </div>
+            <div>
+              <input type="radio" value="2" {...register("CatId")} />2{" "}
+            </div>
+            <div>
+              <input type="radio" value="3" {...register("CatId")} />3
+            </div>
+          </div>
           <div className="my-3">
             <button
               type="submit"
