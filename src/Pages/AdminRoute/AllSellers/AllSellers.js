@@ -15,7 +15,11 @@ const AllSellers = () => {
   return (
     <div>
       {sellers.map((seller) => (
-        <SellerCard key={seller._id} seller={seller}></SellerCard>
+        <SellerCard
+          refetch={refetch}
+          key={seller._id}
+          seller={seller}
+        ></SellerCard>
       ))}
     </div>
   );

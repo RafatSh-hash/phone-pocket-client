@@ -21,7 +21,7 @@ const AllUsers = () => {
     <div>
       <div>
         {users.map((user) => (
-          <UserCard user={user} key={user._id}></UserCard>
+          <UserCard refetch={refetch} user={user} key={user._id}></UserCard>
         ))}
       </div>
     </div>

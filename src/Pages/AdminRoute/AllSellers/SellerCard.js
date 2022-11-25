@@ -1,7 +1,7 @@
 import { Button } from "flowbite-react";
 import React from "react";
 
-const SellerCard = ({ seller }) => {
+const SellerCard = ({ seller, refetch }) => {
   const handleDeleteSeller = (seller) => {
     console.log(seller);
     fetch(`http://localhost:1000/sellers/${seller?._id}`, {
@@ -13,6 +13,9 @@ const SellerCard = ({ seller }) => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        if (data.deletedCount > 0) {
+          refetch();
+        }
       });
   };
 
