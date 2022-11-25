@@ -3,17 +3,18 @@ import { useState } from "react";
 import { useContext } from "react";
 import { AuthContext } from "../../../Context/Context";
 import MyProductCard from "./MyProductCard";
+import Axios from "axios";
 
 const MyProducts = () => {
   const { user } = useContext(AuthContext);
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:1000/myproducts?email=${user?.email}`)
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        setProducts(data);
-      });
+    Axios.get(`http://localhost:1000/myproducts?email=${user?.email}`).then(
+      (data) => {
+        console.log(data.data);
+        setProducts(data.data);
+      }
+    );
   }, [user?.email]);
 
   return (
