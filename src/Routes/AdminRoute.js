@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Navigate, useLocation } from "react-router-dom";
-import useAdmin from "../hooks/useAdmin";
-import { AuthContext } from "../UserContext/UserContext";
+import { AuthContext } from "../Context/Context";
+import useAdmin from "../Hooks/useAdmin";
 import Spinner from "../Utilities/Spinner/Spinner";
 
 const AdminRoute = ({ children }) => {

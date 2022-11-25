@@ -14,6 +14,7 @@ import MyOrders from "../Pages/MyOrders/MyOrders";
 import Registration from "../Pages/Registration/Registration";
 import AddProduct from "../Pages/SellerRoute/AddProduct/AddProduct";
 import MyProducts from "../Pages/SellerRoute/MyProducts/MyProducts";
+import AdminRoute from "./AdminRoute";
 import PrivateRoute from "./PrivateRoute";
 import SellerRoute from "./SellerRoute";
 
@@ -107,11 +108,19 @@ export const routes = createBrowserRouter([
     children: [
       {
         path: "/admin",
-        element: <AllUsers></AllUsers>,
+        element: (
+          <AdminRoute>
+            <AllUsers></AllUsers>
+          </AdminRoute>
+        ),
       },
       {
         path: "/admin/allusers",
-        element: <AllUsers></AllUsers>,
+        element: (
+          <AdminRoute>
+            <AllUsers></AllUsers>
+          </AdminRoute>
+        ),
       },
       {
         path: "/admin/allsellers",
