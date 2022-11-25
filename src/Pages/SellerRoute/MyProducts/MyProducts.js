@@ -20,15 +20,15 @@ const MyProducts = () => {
     <div>
       {products.length === 0 ? (
         <div>
-          <h1 className="text-red-500 my-10 text-3xl text-center">
-            Users haven't order your product yet
+          <h1 className="text-red-500 dark:text-white my-10 text-3xl text-center">
+            You haven't posted any product yet.
           </h1>
         </div>
       ) : (
         <div>
           {" "}
-          <h1 className="text-red-500 my-10 text-3xl text-center">
-            Here are your ordered products
+          <h1 className="text-red-500 dark:text-white  my-10 text-3xl text-center">
+            Here are your posted products
           </h1>
         </div>
       )}
