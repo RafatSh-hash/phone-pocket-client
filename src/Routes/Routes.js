@@ -1,5 +1,6 @@
 import React from "react";
 import { createBrowserRouter } from "react-router-dom";
+import AdminLayout from "../Main/AdminLayout";
 import Main from "../Main/Main";
 import SellerLayout from "../Main/SellerLayout";
 import Blog from "../Pages/Blog/Blog";
@@ -76,6 +77,10 @@ export const routes = createBrowserRouter([
     errorElement: <Error></Error>,
     children: [
       {
+        path: "/seller",
+        element: <MyProducts></MyProducts>,
+      },
+      {
         path: "/seller/addproduct",
         element: (
           <SellerRoute>
@@ -92,5 +97,11 @@ export const routes = createBrowserRouter([
         ),
       },
     ],
+  },
+  {
+    path: "/admin",
+    element: <AdminLayout></AdminLayout>,
+    errorElement: <Error></Error>,
+    children: [{}],
   },
 ]);

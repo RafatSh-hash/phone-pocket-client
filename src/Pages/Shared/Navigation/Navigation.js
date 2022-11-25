@@ -48,6 +48,12 @@ const Navigation = () => {
   return (
     <div className="lg:px-20 sm:px-5 bg-transparent shadow-2xl dark:bg-black dark:text-white">
       <Navbar id="navbar" fluid={true} rounded={true}>
+        <Navbar.Brand href="/">
+          <div className="flex justify-start h-16 items-center">
+            <img className="w-8 h-8" src={logo} alt="" />
+            <h1 className="mx-3 text-2xl font-semibold ">Phone Pocket</h1>
+          </div>
+        </Navbar.Brand>
         <Navbar.Collapse>
           <Link to={"/home"} active={true}>
             Home
@@ -77,12 +83,6 @@ const Navigation = () => {
           <Link to="/blog">Blog</Link>
         </Navbar.Collapse>
 
-        <Navbar.Brand href="/">
-          <div className="flex justify-start h-16 items-center">
-            <img className="w-8 h-8" src={logo} alt="" />
-            <h1 className="mx-3 text-2xl font-semibold ">Phone Pocket</h1>
-          </div>
-        </Navbar.Brand>
         <div className="flex ">
           <button
             onClick={handleThemeSwitch}
