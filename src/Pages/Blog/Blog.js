@@ -13,7 +13,7 @@ const Blog = () => {
       <div
         data-aos="fade-right"
         id="div1"
-        className="border-4 border-slate-900 border-double  to-gray-300 shadow-gray-700 shadow-2xl rounded-2xl p-8 text-left w-5/6 mx-auto mt-10"
+        className="border-4 border-slate-900 border-double dark:bg-black shadow-gray-700 shadow-2xl rounded-2xl p-8 text-left w-5/6 mx-auto mt-10"
       >
         <h3 className="font-semibold ">
           Ques : What are the different ways to manage
@@ -67,7 +67,7 @@ const Blog = () => {
       </div>
       <div
         data-aos="fade-left"
-        className="border-4 border-slate-900 border-double  shadow-gray-700 shadow-2xl rounded-2xl p-8 text-left w-5/6 mx-auto mt-10"
+        className="border-4 border-slate-900 border-double dark:bg-black shadow-gray-700 shadow-2xl rounded-2xl p-8 text-left w-5/6 mx-auto mt-10"
       >
         <h3 className="font-semibold ">
           Ques : How does
@@ -103,7 +103,7 @@ const Blog = () => {
       </div>
       <div
         data-aos="fade-right"
-        className="border-4 border-slate-900 border-double shadow-gray-700 shadow-2xl rounded-2xl p-8 text-left w-5/6 mx-auto mt-10"
+        className="border-4 border-slate-900 border-double dark:bg-black shadow-gray-700 shadow-2xl rounded-2xl p-8 text-left w-5/6 mx-auto mt-10"
       >
         <h3 className="font-semibold ">
           Ques : What is
@@ -150,7 +150,7 @@ const Blog = () => {
       </div>
       <div
         data-aos="fade-left"
-        className="border-4 border-slate-900 border-double  shadow-gray-700 shadow-2xl rounded-2xl p-8 text-left w-5/6 mx-auto mt-10"
+        className="border-4 border-slate-900 border-double dark:bg-black shadow-gray-700 shadow-2xl rounded-2xl p-8 text-left w-5/6 mx-auto mt-10"
       >
         <h3 className="font-bold ">
           Ques : What Are the difference between

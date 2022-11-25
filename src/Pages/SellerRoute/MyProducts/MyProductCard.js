@@ -16,7 +16,14 @@ const MyProductCard = ({ product }) => {
         </p>
         <p className="font-semibold mb-2">Posted On. : {product.postDate}</p>
       </div>
-      <Button gradientMonochrome="success">Pay Now</Button>
+      <div className="flex justify-between">
+        <div className="w-1/5">
+          <Button gradientMonochrome="failure">Delete</Button>
+        </div>
+        <div className="w-1/5">
+          <Button gradientMonochrome="success">Advertise</Button>
+        </div>
+      </div>
     </div>
   );
 };
