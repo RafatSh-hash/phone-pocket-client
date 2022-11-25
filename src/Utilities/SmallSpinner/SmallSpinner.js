@@ -3,7 +3,7 @@ import { Bars } from "react-loader-spinner";
 
 const SmallSpinner = () => {
   return (
-    <div className="w-[80px] h-[80px] mx-auto">
+    <div className="w-[20px] h-[20px] mx-auto">
       <Bars
         height="20"
         width="20"

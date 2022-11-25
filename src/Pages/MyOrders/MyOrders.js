@@ -32,16 +32,18 @@ const MyOrders = () => {
               <Link to={"/"}>Order Now</Link>
             </span>
           </h1>
-        ) : null}
+        ) : (
+          <div>
+            <h1 className="text-3xl font-semibold text-center dark:text-white text-red-500">
+              Your Bookings Are Given Below.
+              <span className="text-blue-500 underline mx-3">
+                <Link to={"/"}>Order More</Link>
+              </span>
+            </h1>
+          </div>
+        )}
       </div>
-      <div>
-        <h1 className="text-3xl font-semibold text-center dark:text-white text-red-500">
-          Your Bookings Are Given Below.
-          <span className="text-blue-500 underline mx-3">
-            <Link to={"/"}>Order More</Link>
-          </span>
-        </h1>
-      </div>
+
       <div className="lg:w-6/12 sm:w-4/5 mx-auto">
         {orders.map((order) => (
           <OrderCard order={order} key={order._id}></OrderCard>
