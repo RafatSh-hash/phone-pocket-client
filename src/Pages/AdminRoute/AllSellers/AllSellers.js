@@ -1,7 +1,24 @@
 import React from "react";
+import { useQuery } from "@tanstack/react-query";
+import SellerCard from "./SellerCard";
 
 const AllSellers = () => {
-  return <div></div>;
+  const { data: sellers = [], refetch } = useQuery({
+    queryKey: ["sellers"],
+    queryFn: async () => {
+      const res = await fetch("http://localhost:1000/sellers");
+      const data = await res.json();
+      console.log(data);
+      return data;
+    },
+  });
+  return (
+    <div>
+      {sellers.map((seller) => (
+        <SellerCard key={seller._id} seller={seller}></SellerCard>
+      ))}
+    </div>
+  );
 };
 
 export default AllSellers;
