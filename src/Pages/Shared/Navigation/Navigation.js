@@ -10,7 +10,7 @@ import logo from "../../../Assets/android-chrome-192x192.png";
 const Navigation = () => {
   const [theme, setTheme] = useState("light");
   const { user, logOut } = useContext(AuthContext);
-  const [dbUser, setDbUser] = useState(null);
+  const [dbUser, setDbUser] = useState({});
   useEffect(() => {
     if (theme === "dark") {
       document.documentElement.classList.add("dark");
@@ -27,13 +27,13 @@ const Navigation = () => {
     fetch(`http://localhost:1000/dbuser?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
-        setDbUser(data);
         console.log(data);
+        setDbUser(data);
       })
       .catch((error) => {
         console.log(error);
       });
-  }, [user?.email]);
+  }, [user]);
 
   const handleLogout = () => {
     logOut()

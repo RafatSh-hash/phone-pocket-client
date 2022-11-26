@@ -10,7 +10,7 @@ const Spinner = () => {
         color="blue"
         ariaLabel="circles-loading"
         wrapperStyle={{}}
-        wrapperclass="vortex-wrapper"
+        wrapperclassName="vortex-wrapper"
         visible={true}
       />
     </div>

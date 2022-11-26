@@ -52,7 +52,7 @@ const Registration = () => {
         if (imgData.success) {
           console.log(imgData.data.url);
           const profile = {
-            displayName: data.name,
+            name: data.name,
             email: data.email,
             photoURL: imgData.data.url,
             role: data.role,
@@ -60,8 +60,8 @@ const Registration = () => {
           console.log(profile);
           updateUserProfile(profile)
             .then(() => {
-              saveUser(profile.name, profile.email, profile.role);
               console.log(profile.name, profile.email, profile.role);
+              saveUser(profile.name, profile.email, profile.role);
             })
             .catch((error) => {
               console.log(error);

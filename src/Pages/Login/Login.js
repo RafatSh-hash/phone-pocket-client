@@ -9,6 +9,7 @@ import { Button } from "flowbite-react";
 
 const Login = () => {
   const [currentUser, setCurrrentUser] = useState(null);
+  const [error, setError] = useState("");
   const { loginWithEmailPass, googleLogin } = useContext(AuthContext);
   const [loginEmail, setLoginEmail] = useState("");
   const [token] = useToken(loginEmail, true);
@@ -35,6 +36,7 @@ const Login = () => {
       })
       .catch((error) => {
         console.log(error);
+        setError(error.message);
       });
   };
 
@@ -49,11 +51,12 @@ const Login = () => {
           name: googleUser.displayName,
           role: "user",
         };
-        saveUser(Guser);
+        // saveUser(Guser);
         setLoginEmail(Guser.email);
       })
-      .catch((e) => {
-        console.log(e);
+      .catch((error) => {
+        console.log(error);
+        setError(error.message);
       });
   };
 
@@ -74,6 +77,9 @@ const Login = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+      })
+      .catch((error) => {
+        setError(error.message);
       });
   };
 
@@ -123,6 +129,7 @@ const Login = () => {
               Remember me
             </label>
           </div>
+          {error && <p className="text-red-500 text-center">{error}</p>}
           <button
             type="submit"
             className="text-white w-full bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
