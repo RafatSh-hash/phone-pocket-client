@@ -11,6 +11,7 @@ import Error from "../Pages/Error/Error";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import MyOrders from "../Pages/MyOrders/MyOrders";
+import MyWishlist from "../Pages/MyWishlist/MyWishlist";
 import Registration from "../Pages/Registration/Registration";
 import AddProduct from "../Pages/SellerRoute/AddProduct/AddProduct";
 import MyProducts from "../Pages/SellerRoute/MyProducts/MyProducts";
@@ -36,6 +37,10 @@ export const routes = createBrowserRouter([
       {
         path: "/blog",
         element: <Blog></Blog>,
+      },
+      {
+        path: "/mywishlist",
+        element: <MyWishlist></MyWishlist>,
       },
       {
         path: "/category/:id",

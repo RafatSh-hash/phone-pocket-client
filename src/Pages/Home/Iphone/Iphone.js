@@ -23,7 +23,7 @@ const Iphone = () => {
           <IphoneCard key={product._id} product={product}></IphoneCard>
         ))}
       </div>
-      <div className="my-10 w-[20rem] mx-auto">
+      <div className="my-10 lg:w-[20rem] sm:w-[80%] mx-auto">
         <Link to={`/category/${id}`}>
           <Button gradientDuoTone="purpleToPink">
             See All From Apple Iphone

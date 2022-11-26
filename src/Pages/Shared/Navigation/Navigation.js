@@ -74,6 +74,12 @@ const Navigation = () => {
               <Link to="/myorders">Dashboard</Link>
             ) : null}
           </>
+          <>
+            {" "}
+            {dbUser && dbUser?.role === "user" ? (
+              <Link to="/mywishlist">My Wishlist</Link>
+            ) : null}
+          </>
 
           <>
             {dbUser && dbUser?.role === "seller" ? (

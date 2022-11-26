@@ -26,16 +26,37 @@ const ProductCard = ({ product }) => {
     thumbnail,
   } = product;
 
-  const handleBooking = (event) => {
-    event.preventDefault();
-    const form = event.target;
-    const name = form.name.value;
-    // const price = form.price.value;
-    // const userName = form.userName.value;
-    // const phone = form.phone.value;
-    // const meetLocation = form.meetLocation.value;
-    // console.log(name, price, userName, phone, meetLocation);
-    console.log(name);
+  //   const handleBooking = (event) => {
+  //     event.preventDefault();
+  //     const form = event.target;
+  //     const name = form.name.value;
+  //     // const price = form.price.value;
+  //     // const userName = form.userName.value;
+  //     // const phone = form.phone.value;
+  //     // const meetLocation = form.meetLocation.value;
+  //     // console.log(name, price, userName, phone, meetLocation);
+  //     console.log(name);
+  //   };
+
+  const handleAddToWishList = (product) => {
+    const wish = {
+      product: product.name,
+      price: product.APrice,
+      email: user?.email,
+      condition: product.Condition,
+    };
+    fetch(`http://localhost:1000/wishlist`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+        authorization: `bearer ${localStorage.getItem("accessToken")}`,
+      },
+      body: JSON.stringify(wish),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
   };
 
   return (
@@ -60,13 +81,35 @@ const ProductCard = ({ product }) => {
           <p className="font-bold">Post Date: {postDate}</p>
         </div>
 
-        <button
-          onClick={clicked}
-          className="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-b-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-full"
-          type="button"
-        >
-          Buy Now
-        </button>
+        <div className="flex justify-evenly">
+          <div className="w-full">
+            <button
+              onClick={clicked}
+              className="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-b-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-full"
+              type="button"
+            >
+              Buy Now
+            </button>
+          </div>
+          <div className="w-full">
+            <button
+              onClick={() => handleAddToWishList(product)}
+              className="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium  rounded-b-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-full"
+              type="button"
+            >
+              Wishlist
+            </button>
+          </div>
+          <div className="w-full">
+            <button
+              onClick={clicked}
+              className="block text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-b-lg text-sm px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800 w-full"
+              type="button"
+            >
+              Report
+            </button>
+          </div>
+        </div>
       </div>
 
       {modalOn && (

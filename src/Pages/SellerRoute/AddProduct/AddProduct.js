@@ -10,7 +10,7 @@ import Spinner from "../../../Utilities/Spinner/Spinner";
 const AddProduct = () => {
   const { loading, user } = useContext(AuthContext);
   //   const [CatergoryId, setCatergoryId] = useState(null);
-
+  console.log(user);
   const {
     register,
     formState: { errors },
@@ -94,8 +94,6 @@ const AddProduct = () => {
                 required: "sellerName is required",
                 maxLength: 20,
               })}
-              defaultValue={user.displayName}
-              readOnly
               type="text"
               className="input input-bordered dark:bg-gray-600 dark:text-white w-full  rounded-lg"
             />
@@ -280,7 +278,8 @@ const AddProduct = () => {
             <option value="iphone">Iphone</option>
           </select>
           <p className="text-sm my-4 text-center font-semibold text-red-500">
-            Choose 1 for Google, 2 for Samsung, 3 for Iphone
+            Choose Category 1 for Google,Category 2 for Samsung,Category 3 for
+            Iphone
           </p>
           <div className="flex justify-evenly">
             <div>

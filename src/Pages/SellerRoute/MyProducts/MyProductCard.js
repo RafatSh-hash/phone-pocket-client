@@ -13,6 +13,22 @@ const MyProductCard = ({ product }) => {
     });
   };
 
+  const handleAdvertise = () => {
+    console.log(product);
+    fetch(`http://localhost:1000/advertise`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        authorization: `bearer ${localStorage.getItem("accessToken")}`,
+      },
+      body: JSON.stringify(product),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+  };
+
   return (
     <div className="shadow-lg shadow-gray-600 dark:bg-black w-1/2 mx-auto rounded-2xl my-10 p-5">
       <h1 className="text-2xl font-bold">{product.name}</h1>
@@ -35,7 +51,7 @@ const MyProductCard = ({ product }) => {
             Delete
           </Button>
         </div>
-        <div className="w-1/5">
+        <div onClick={() => handleAdvertise(product)} className="w-1/5">
           <Button gradientMonochrome="success">Advertise</Button>
         </div>
       </div>
