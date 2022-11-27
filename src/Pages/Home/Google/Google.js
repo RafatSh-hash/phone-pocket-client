@@ -3,6 +3,7 @@ import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import Axios from "axios";
 
 import GoogleCard from "./GoogleCard";
 
@@ -10,13 +11,11 @@ const Google = () => {
   const [products, setProducts] = useState([]);
   const [id, setId] = useState(1);
   useEffect(() => {
-    fetch(`http://localhost:1000/google`)
-      .then((res) => res.json())
-      .then((data) => {
-        setProducts(data);
-        products.map((p) => setId(p.CatId));
-        console.log(id);
-      });
+    Axios.get("http://localhost:1000/google").then((data) => {
+      setProducts(data.data);
+      products.map((p) => setId(p.CatId));
+      console.log(id);
+    });
   }, []);
 
   return (

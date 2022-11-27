@@ -4,18 +4,33 @@ import { useContext } from "react";
 import { AuthContext } from "../../../Context/Context";
 import MyProductCard from "./MyProductCard";
 import Axios from "axios";
+import { useQuery } from "@tanstack/react-query";
+import useTitle from "../../../Hooks/useTitle";
 
 const MyProducts = () => {
+  useTitle("My Products");
   const { user } = useContext(AuthContext);
-  const [products, setProducts] = useState([]);
-  useEffect(() => {
-    Axios.get(`http://localhost:1000/myproducts?email=${user?.email}`).then(
-      (data) => {
-        console.log(data.data);
-        setProducts(data.data);
-      }
-    );
-  }, [user?.email]);
+  // const [products, setProducts] = useState([]);
+
+  const { data: products = [], refetch } = useQuery({
+    queryKey: ["myproducts"],
+    queryFn: async () => {
+      const res = await fetch(
+        `http://localhost:1000/myproducts?email=${user?.email}`
+      );
+      const data = res.json();
+      return data;
+    },
+  });
+
+  // useEffect(() => {
+  //   Axios.get(`http://localhost:1000/myproducts?email=${user?.email}`).then(
+  //     (data) => {
+  //       console.log(data.data);
+  //       setProducts(data.data);
+  //     }
+  //   );
+  // }, [user?.email]);
 
   return (
     <div>
@@ -36,7 +51,11 @@ const MyProducts = () => {
 
       <div>
         {products.map((product) => (
-          <MyProductCard product={product} key={product._id}></MyProductCard>
+          <MyProductCard
+            refetch={refetch}
+            product={product}
+            key={product._id}
+          ></MyProductCard>
         ))}
       </div>
     </div>

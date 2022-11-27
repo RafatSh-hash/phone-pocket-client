@@ -5,8 +5,10 @@ import { Link } from "react-router-dom";
 import jamie from "../../Assets/jamie.jpg";
 import tyrion from "../../Assets/Tyrion.jpg";
 import { AuthContext } from "../../Context/Context";
+import useTitle from "../../Hooks/useTitle";
 
 const ContactUs = () => {
+  useTitle("Contact Us");
   const { user } = useContext(AuthContext);
   console.log(user);
   return (

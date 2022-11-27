@@ -2,8 +2,10 @@ import React from "react";
 // import useTitle from "../../Hooks/useTitle";
 import "aos/dist/aos.css";
 import AOS from "aos";
+import useTitle from "../../Hooks/useTitle";
 
 const Blog = () => {
+  useTitle("Blog");
   AOS.init({ duration: 500 });
   // useTitle("Blog");
   //Blog Page Ques And Answers

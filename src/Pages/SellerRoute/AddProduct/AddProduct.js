@@ -7,8 +7,10 @@ import { useForm } from "react-hook-form";
 import { AuthContext } from "../../../Context/Context";
 import SmallSpinner from "../../../Utilities/SmallSpinner/SmallSpinner";
 import Spinner from "../../../Utilities/Spinner/Spinner";
+import useTitle from "../../../Hooks/useTitle";
 
 const AddProduct = () => {
+  useTitle("Add Product");
   const { loading, user } = useContext(AuthContext);
   //   const [CatergoryId, setCatergoryId] = useState(null);
   console.log(user);

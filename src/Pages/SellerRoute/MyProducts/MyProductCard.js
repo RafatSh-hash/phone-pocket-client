@@ -1,7 +1,7 @@
 import { Button } from "flowbite-react";
 import React from "react";
 import toast, { Toaster } from "react-hot-toast";
-const MyProductCard = ({ product }) => {
+const MyProductCard = ({ product, refetch }) => {
   const handleDelete = (product) => {
     console.log(product);
     fetch(`http://localhost:1000/products/${product._id}`, {
@@ -14,6 +14,7 @@ const MyProductCard = ({ product }) => {
       .then((res) => res.json())
       .then((data) => {
         toast.success("Succeeded Deletion!");
+        refetch();
         console.log(data);
       });
   };

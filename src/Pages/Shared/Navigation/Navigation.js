@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../../Context/Context";
 import logo from "../../../Assets/android-chrome-192x192.png";
 import { MdDarkMode, MdLightMode } from "react-icons/md";
+import { useQuery } from "@tanstack/react-query";
 
 const Navigation = () => {
   const [theme, setTheme] = useState("light");
@@ -23,6 +24,17 @@ const Navigation = () => {
   const handleThemeSwitch = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
+
+  // const { data: dbUser = {} } = useQuery({
+  //   queryKey: ["dbuser", user?.email],
+  //   queryFn: async () => {
+  //     const res = await fetch(
+  //       `http://localhost:1000/dbuser?email=${user?.email}`
+  //     );
+  //     const data = await res.json();
+  //     return data;
+  //   },
+  // });
 
   useEffect(() => {
     fetch(`http://localhost:1000/dbuser?email=${user?.email}`)
