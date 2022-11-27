@@ -17,9 +17,9 @@ const Login = () => {
   const navigate = useNavigate();
   const from = location.state?.from?.pathname || "/";
 
-  // if (token) {
-  //   navigate(from, { replace: true });
-  // }
+  if (token) {
+    navigate(from, { replace: true });
+  }
   const handleLogin = (event) => {
     event.preventDefault();
     const form = event.target;
