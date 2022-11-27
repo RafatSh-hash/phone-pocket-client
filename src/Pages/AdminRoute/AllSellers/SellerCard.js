@@ -39,7 +39,7 @@ const SellerCard = ({ seller, refetch }) => {
     >
       <div className="flex justify-between w-3/5">
         <h3 className="flex h-10 items-center">
-          {seller.name}
+          {seller?.name}
           <span className="text-blue-500 mx-3">
             {seller?.status === "verified" ? <MdOutlineVerified /> : null}
           </span>
