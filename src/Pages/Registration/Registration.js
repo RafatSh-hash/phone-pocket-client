@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import Lottie from "lottie-react";
 import registration from "../../Assets/registration.json";
-import Spinner from "../../Utilities/Spinner/Spinner.js";
+//import Spinner from "../../Utilities/Spinner/Spinner.js";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../Context/Context";
 import { useState } from "react";

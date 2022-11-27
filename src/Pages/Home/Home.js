@@ -37,7 +37,9 @@ const Home = () => {
           Welcome to Phone Pocket! Buy or Sell your old smartphones here.
         </h1>
       </div>
-      <Banner></Banner>
+      <div className="w-full">
+        <Banner></Banner>
+      </div>
       {advertisedProducts.length > 0 ? (
         <AdvertiseCard
           advertisedProducts={advertisedProducts}

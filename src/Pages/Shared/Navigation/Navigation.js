@@ -96,6 +96,7 @@ const Navigation = () => {
               <Link to={"/seller/addproduct"}>Add Product</Link>
             ) : null}
           </>
+          <Link to="/contactus">Contact Us</Link>
           <Link to="/blog">Blog</Link>
         </Navbar.Collapse>
 

@@ -7,6 +7,7 @@ import AllSellers from "../Pages/AdminRoute/AllSellers/AllSellers";
 import AllUsers from "../Pages/AdminRoute/AllUsers/AllUsers";
 import Blog from "../Pages/Blog/Blog";
 import CategoryProducts from "../Pages/CategoryProducts/CategoryProducts";
+import ContactUs from "../Pages/ContactUs/ContactUs";
 import Error from "../Pages/Error/Error";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
@@ -37,6 +38,10 @@ export const routes = createBrowserRouter([
       {
         path: "/blog",
         element: <Blog></Blog>,
+      },
+      {
+        path: "/contactus",
+        element: <ContactUs></ContactUs>,
       },
       {
         path: "/mywishlist",
