@@ -45,6 +45,7 @@ const Context = ({ children }) => {
 
   //05.Update User Profile
   const updateUserProfile = (profile) => {
+    console.log(profile);
     return updateProfile(auth.currentUser, profile);
   };
 

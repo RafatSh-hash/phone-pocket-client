@@ -91,6 +91,10 @@ const Registration = () => {
         .then((data) => {
           console.log(data);
           setUserEmail(user.email);
+        })
+        .catch((error) => {
+          console.log(error);
+          navigate("/");
         });
     };
   };
