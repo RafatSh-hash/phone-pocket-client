@@ -9,11 +9,12 @@ import logo from "../../../Assets/android-chrome-192x192.png";
 import { MdDarkMode, MdLightMode } from "react-icons/md";
 import { useQuery } from "@tanstack/react-query";
 import { FaBeer, FaUserAlt } from "react-icons/fa";
+import N from "../../../Assets/user.png";
 
 const Navigation = () => {
   const [theme, setTheme] = useState("light");
   const { user, logOut } = useContext(AuthContext);
-  // const [dbUser, setDbUser] = useState({});
+  const [dbUser, setDbUser] = useState({});
   useEffect(() => {
     if (theme === "dark") {
       document.documentElement.classList.add("dark");
@@ -26,28 +27,28 @@ const Navigation = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
 
-  const { data: dbUser = {} } = useQuery({
-    queryKey: ["dbuser", user?.email],
-    queryFn: async () => {
-      const res = await fetch(
-        `http://localhost:1000/dbuser?email=${user?.email}`
-      );
-      const data = await res.json();
-      return data;
-    },
-  });
+  // const { data: dbUser = {} } = useQuery({
+  //   queryKey: ["dbuser", user?.email],
+  //   queryFn: async () => {
+  //     const res = await fetch(
+  //       `http://localhost:1000/dbuser?email=${user?.email}`
+  //     );
+  //     const data = await res.json();
+  //     return data;
+  //   },
+  // });
 
-  // useEffect(() => {
-  //   fetch(`http://localhost:1000/dbuser?email=${user?.email}`)
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       console.log(data);
-  //       setDbUser(data);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // }, [user]);
+  useEffect(() => {
+    fetch(`http://localhost:1000/dbuser?email=${user?.email}`)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setDbUser(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [user?.email]);
 
   const handleLogout = () => {
     logOut()
@@ -155,11 +156,7 @@ const Navigation = () => {
             <Tooltip content={dbUser?.name}>
               <img
                 className="w-11 h-11 hover:translate-y-1 hover:scale-110 duration-500 rounded-full mx-3"
-                src={
-                  user?.photoURL
-                    ? user.photoURL
-                    : "https://flowbite.com/docs/images/people/profile-picture-1.jpg"
-                }
+                src={user?.photoURL ? user.photoURL : null}
                 alt=""
               />
             </Tooltip>

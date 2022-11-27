@@ -54,6 +54,7 @@ const AddProduct = () => {
             postDate: date.toString().slice(0, 15),
             sellerName: data.sellerName,
             sellerEmail: user?.email,
+            status: "unverified",
           };
           //   if (data.brand === "google") {
           //     setCatergoryId(1);

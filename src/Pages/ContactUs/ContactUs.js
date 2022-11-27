@@ -8,12 +8,18 @@ import { AuthContext } from "../../Context/Context";
 import useTitle from "../../Hooks/useTitle";
 import "aos/dist/aos.css";
 import AOS from "aos";
+import toast from "react-hot-toast";
 
 const ContactUs = () => {
   AOS.init({ duration: 500 });
   useTitle("Contact Us");
   const { user } = useContext(AuthContext);
   console.log(user);
+
+  const handleSubmit = () => {
+    toast.success("We've recieved your message!");
+  };
+
   return (
     <div className="4/6 mx-auto my-20">
       <div className="flex justify-evenly flex-wrap">
@@ -81,7 +87,7 @@ const ContactUs = () => {
         </div>
       </div>
       <div className="mt-20 mb-10">
-        <h1 className="text-3xl font-bold text-blue-600 text-center italic">
+        <h1 className="text-3xl font-bold text-blue-600 dark:text-white text-center italic">
           Please fill up the form if you have to say something to us
         </h1>
       </div>
@@ -131,7 +137,9 @@ const ContactUs = () => {
             ></textarea>
           </div>
           <div className="w-32 my-10 mx-auto">
-            <Button gradientMonochrome="success">Submit</Button>
+            <Button onClick={handleSubmit} gradientMonochrome="success">
+              Submit
+            </Button>
           </div>
         </form>
       </div>
