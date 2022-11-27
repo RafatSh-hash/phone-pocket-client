@@ -1,9 +1,7 @@
-import axios from "axios";
 import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
+
 import { useLoaderData } from "react-router-dom";
-import GoogleCard from "../Home/Google/GoogleCard";
+
 import ProductCard from "./ProductCard";
 
 const CategoryProducts = () => {

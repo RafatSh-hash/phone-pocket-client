@@ -23,15 +23,6 @@ const MyProducts = () => {
     },
   });
 
-  // useEffect(() => {
-  //   Axios.get(`http://localhost:1000/myproducts?email=${user?.email}`).then(
-  //     (data) => {
-  //       console.log(data.data);
-  //       setProducts(data.data);
-  //     }
-  //   );
-  // }, [user?.email]);
-
   return (
     <div>
       {products.length === 0 ? (

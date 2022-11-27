@@ -1,6 +1,5 @@
-import { data } from "autoprefixer";
 import React from "react";
-import { useState } from "react";
+
 import toast, { Toaster } from "react-hot-toast";
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
@@ -88,6 +87,7 @@ const AddProduct = () => {
 
   return (
     <div>
+      {loading && <Spinner></Spinner>}
       <div
         data-aos="fade-up"
         className="lg:w-2/3 md:w-1/4 sm:w-full mx-auto my-10"

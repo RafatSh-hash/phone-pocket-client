@@ -1,5 +1,5 @@
 import React from "react";
-// import useTitle from "../../Hooks/useTitle";
+
 import "aos/dist/aos.css";
 import AOS from "aos";
 import useTitle from "../../Hooks/useTitle";
@@ -7,11 +7,9 @@ import useTitle from "../../Hooks/useTitle";
 const Blog = () => {
   useTitle("Blog");
   AOS.init({ duration: 500 });
-  // useTitle("Blog");
-  //Blog Page Ques And Answers
+
   return (
     <div data-aos="fade-up" className="p-5 mt-0">
-      {/* <h1>Hello Blog</h1> */}
       <div
         data-aos="fade-right"
         id="div1"

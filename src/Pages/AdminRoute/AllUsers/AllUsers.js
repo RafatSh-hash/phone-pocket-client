@@ -1,7 +1,6 @@
 import React from "react";
-import { useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { useState } from "react";
+
 import UserCard from "./UserCard";
 import useTitle from "../../../Hooks/useTitle";
 
