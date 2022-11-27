@@ -8,6 +8,7 @@ import { AuthContext } from "../../../Context/Context";
 import logo from "../../../Assets/android-chrome-192x192.png";
 import { MdDarkMode, MdLightMode } from "react-icons/md";
 import { useQuery } from "@tanstack/react-query";
+import { FaBeer, FaUserAlt } from "react-icons/fa";
 
 const Navigation = () => {
   const [theme, setTheme] = useState("light");
@@ -153,8 +154,12 @@ const Navigation = () => {
           <div className="">
             <Tooltip content={dbUser?.name}>
               <img
-                className="w-11 h-11  rounded-full mx-3"
-                src={user?.photoURL}
+                className="w-11 h-11 hover:translate-y-1 hover:scale-110 duration-500 rounded-full mx-3"
+                src={
+                  user?.photoURL
+                    ? user.photoURL
+                    : "https://flowbite.com/docs/images/people/profile-picture-1.jpg"
+                }
                 alt=""
               />
             </Tooltip>

@@ -67,7 +67,7 @@ const ProductCard = ({ product }) => {
   return (
     <div
       data-aos="fade-right"
-      className="mx-5 my-10 shadow-xl shadow-black rounded-lg w-[20rem] dark:bg-black"
+      className="mx-5 my-20 shadow-xl shadow-black rounded-lg w-[20rem] dark:bg-black"
     >
       <div className="rounded-lg">
         <div className="h-48 rounded-lg">

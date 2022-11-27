@@ -11,7 +11,9 @@ const OrderCard = ({ order }) => {
       </div>
       <div className="text-right">
         <p className="text-sm font-semibold mb-2">{order.phone}</p>
-        <Button gradientMonochrome="success">Pay Now</Button>
+        <Button onClick={`/`} gradientMonochrome="success">
+          Pay Now
+        </Button>
       </div>
     </div>
   );
