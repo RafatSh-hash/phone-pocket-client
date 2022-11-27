@@ -17,9 +17,9 @@ const Login = () => {
   const navigate = useNavigate();
   const from = location.state?.from?.pathname || "/";
 
-  if (token) {
-    navigate(from, { replace: true });
-  }
+  // if (token) {
+  //   navigate(from, { replace: true });
+  // }
   const handleLogin = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -32,6 +32,7 @@ const Login = () => {
         console.log(user);
         setLoginEmail(user.email);
         setCurrrentUser(user);
+        navigate(from, { replace: true });
         form.reset();
       })
       .catch((error) => {
@@ -53,6 +54,7 @@ const Login = () => {
         };
         // saveUser(Guser);
         setLoginEmail(Guser.email);
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         console.log(error);

@@ -83,7 +83,8 @@ const ContactUs = () => {
                 <Label htmlFor="small" value="Your Name" />
               </div>
               <TextInput
-                placeholder={user?.displayName}
+                placeholder="Your Name Here"
+                defaultValue={user?.displayName}
                 id="small"
                 type="text"
                 sizing="sm"
@@ -94,7 +95,8 @@ const ContactUs = () => {
                 <Label htmlFor="base" value="Your Email" />
               </div>
               <TextInput
-                placeholder={user?.email}
+                placeholder="Your Email Here"
+                defaultValue={user?.email}
                 id="base"
                 type="text"
                 sizing="md"
@@ -135,7 +137,7 @@ const ContactUs = () => {
               Hotline 1 : +88012121212
             </p>
             <p className="text-center font-semibold">
-              Hotline 2: admin@contact.com
+              Hotline 2: +880232323232
             </p>
             <p className="text-center font-semibold">
               Our Headqauters: 57 street, New York, USA
