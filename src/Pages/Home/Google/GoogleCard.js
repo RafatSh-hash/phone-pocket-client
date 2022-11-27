@@ -1,7 +1,10 @@
 import { Button, Card } from "flowbite-react";
 import React from "react";
+import "aos/dist/aos.css";
+import AOS from "aos";
 
 const GoogleCard = ({ product }) => {
+  AOS.init({ duration: 500 });
   const {
     APrice,
     Battery,
@@ -15,7 +18,10 @@ const GoogleCard = ({ product }) => {
     thumbnail,
   } = product;
   return (
-    <div className="lg:w-[32rem] rounded-2xl sm:w-full my-5 mx-5 shadow-md bg-gray-200 border-2">
+    <div
+      data-aos="fade-right"
+      className="lg:w-[32rem] rounded-2xl sm:w-full my-5 mx-5 shadow-md bg-gray-200 border-2"
+    >
       <div className="h-48">
         <img
           className="w-full h-full rounded-t-2xl"

@@ -1,9 +1,15 @@
 import React from "react";
+import "aos/dist/aos.css";
+import AOS from "aos";
 
 const Product = ({ product }) => {
+  AOS.init({ duration: 500 });
   console.log(product);
   return (
-    <div className="lg:w-[22%] sm:w-full mt-10 shadow-xl shadow-gray-500 mx-2 dark:bg-black p-3 rounded-2xl">
+    <div
+      data-aos="fade-right"
+      className="lg:w-[22%] sm:w-full mt-10 shadow-xl shadow-gray-500 mx-2 dark:bg-black p-3 rounded-2xl"
+    >
       <h3 className="text-3xl font-semibold text-center">{product.name}</h3>
       <div className="w-full h-32 mt-3">
         <img

@@ -10,8 +10,11 @@ import SmallSpinner from "../../Utilities/SmallSpinner/SmallSpinner";
 import useToken from "../../Hooks/useToken";
 import { useNavigate } from "react-router-dom";
 import useTitle from "../../Hooks/useTitle";
+import "aos/dist/aos.css";
+import AOS from "aos";
 
 const Registration = () => {
+  AOS.init({ duration: 500 });
   useTitle("Registration");
   const { createUser, updateUserProfile, loading, setLoading } =
     useContext(AuthContext);
@@ -97,7 +100,7 @@ const Registration = () => {
         <div className="lg:w-1/2 md:w-1/3 sm:w-full p-8 hover:-translate-y-1 hover:scale-110 duration-500">
           <Lottie animationData={registration} loop={true} />
         </div>
-        <div className="lg:w-2/3 md:w-1/4 sm:w-full">
+        <div data-aos="fade-left" className="lg:w-2/3 md:w-1/4 sm:w-full">
           <form
             onSubmit={handleSubmit(handleSignUp)}
             className=" border w-[60%] mx-auto bg-gray-200 dark:bg-gray-600 dark:text-white border-blue-500 py-5 px-5 shadow-lg hover:shadow-2xl rounded-2xl "

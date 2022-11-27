@@ -1,7 +1,10 @@
 import { Button } from "flowbite-react";
 import React from "react";
 import toast, { Toaster } from "react-hot-toast";
+import "aos/dist/aos.css";
+import AOS from "aos";
 const MyProductCard = ({ product, refetch }) => {
+  AOS.init({ duration: 500 });
   const handleDelete = (product) => {
     console.log(product);
     fetch(`http://localhost:1000/products/${product._id}`, {
@@ -37,7 +40,10 @@ const MyProductCard = ({ product, refetch }) => {
   };
 
   return (
-    <div className="shadow-lg shadow-gray-600 dark:bg-black w-1/2 mx-auto rounded-2xl my-10 p-5">
+    <div
+      data-aos="fade-left"
+      className="shadow-lg shadow-gray-600 dark:bg-black w-1/2 mx-auto rounded-2xl my-10 p-5"
+    >
       <h1 className="text-2xl font-bold">{product.name}</h1>
       <div className="my-3 font-semibold">
         <p>Price : $ {product.APrice}</p>

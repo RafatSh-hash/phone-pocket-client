@@ -1,8 +1,10 @@
 import React from "react";
 import { useQuery } from "@tanstack/react-query";
 import SellerCard from "./SellerCard";
+import useTitle from "../../../Hooks/useTitle";
 
 const AllSellers = () => {
+  useTitle("All Sellers");
   const { data: sellers = [], refetch } = useQuery({
     queryKey: ["sellers"],
     queryFn: async () => {

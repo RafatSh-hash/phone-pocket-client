@@ -3,8 +3,11 @@ import React, { useState } from "react";
 import { useContext } from "react";
 import { AuthContext } from "../../Context/Context";
 import BookingModal from "./BookingModal/BookingModal";
+import "aos/dist/aos.css";
+import AOS from "aos";
 
 const ProductCard = ({ product }) => {
+  AOS.init({ duration: 500 });
   const { user } = useContext(AuthContext);
   const [modalOn, setModalOn] = useState(false);
   const [choice, setChoice] = useState(false);
@@ -60,7 +63,10 @@ const ProductCard = ({ product }) => {
   };
 
   return (
-    <div className="mx-5 my-10 shadow-xl shadow-black rounded-lg w-[20rem] dark:bg-black">
+    <div
+      data-aos="fade-right"
+      className="mx-5 my-10 shadow-xl shadow-black rounded-lg w-[20rem] dark:bg-black"
+    >
       <div className="rounded-lg">
         <div className="h-48 rounded-lg">
           <img

@@ -8,8 +8,11 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { Button } from "flowbite-react";
 import toast, { Toaster } from "react-hot-toast";
 import useTitle from "../../Hooks/useTitle";
+import "aos/dist/aos.css";
+import AOS from "aos";
 
 const Login = () => {
+  AOS.init({ duration: 500 });
   useTitle("Login");
   const [currentUser, setCurrrentUser] = useState(null);
   const [error, setError] = useState("");
@@ -91,7 +94,7 @@ const Login = () => {
 
   return (
     <div className="lg:flex lg:flex-row md:flex md:flex-col sm:flex sm:flex-col w-11/12 mt-10 mx-auto h-auto items-center justify-evenly">
-      <div className="lg:w-1/2 sm:w-full md:w-1/4">
+      <div data-aos="fade-right" className="lg:w-1/2 sm:w-full md:w-1/4">
         <form
           className=" border w-[60%] mx-auto bg-gray-200 dark:bg-gray-600 dark:text-white border-blue-500 py-5 px-5 shadow-lg hover:shadow-2xl rounded-2xl "
           onSubmit={handleLogin}

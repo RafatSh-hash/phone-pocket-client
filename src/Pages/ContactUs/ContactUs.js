@@ -6,15 +6,21 @@ import jamie from "../../Assets/jamie.jpg";
 import tyrion from "../../Assets/Tyrion.jpg";
 import { AuthContext } from "../../Context/Context";
 import useTitle from "../../Hooks/useTitle";
+import "aos/dist/aos.css";
+import AOS from "aos";
 
 const ContactUs = () => {
+  AOS.init({ duration: 500 });
   useTitle("Contact Us");
   const { user } = useContext(AuthContext);
   console.log(user);
   return (
     <div className="4/6 mx-auto my-20">
       <div className="flex justify-evenly flex-wrap">
-        <div className="max-w-sm shadow-2xl dark:bg-gray-600 dark:text-white">
+        <div
+          data-aos="fade-right"
+          className="max-w-sm shadow-2xl dark:bg-gray-600 dark:text-white"
+        >
           <Card>
             <div className="flex flex-col items-center pb-10">
               <img
@@ -44,7 +50,10 @@ const ContactUs = () => {
             </div>
           </Card>
         </div>
-        <div className="max-w-sm shadow-2xl  dark:bg-gray-600 dark:text-white">
+        <div
+          data-aos="fade-left"
+          className="max-w-sm shadow-2xl  dark:bg-gray-600 dark:text-white"
+        >
           <Card>
             <div className="flex flex-col items-center pb-10">
               <img
@@ -77,7 +86,10 @@ const ContactUs = () => {
         </h1>
       </div>
 
-      <div className="w-1/2 mx-auto my-10 bg-gray-400 dark:bg-gray-600 p-8 rounded-2xl dark:text-white">
+      <div
+        data-aos="fade-up"
+        className="w-1/2 mx-auto my-10 bg-gray-400 dark:bg-gray-600 p-8 rounded-2xl dark:text-white"
+      >
         <form>
           <div className="flex flex-col gap-4">
             <div>
@@ -123,7 +135,7 @@ const ContactUs = () => {
           </div>
         </form>
       </div>
-      <div className="w-2/5 mx-auto  ">
+      <div data-aos="fade-down" className="w-2/5 mx-auto  ">
         <div className=" shadow-2xl rounded-2xl">
           <Card>
             <h1 className="text-2xl font-bold text-center italic">

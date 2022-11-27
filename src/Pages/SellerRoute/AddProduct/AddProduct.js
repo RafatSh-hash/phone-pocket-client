@@ -8,8 +8,11 @@ import { AuthContext } from "../../../Context/Context";
 import SmallSpinner from "../../../Utilities/SmallSpinner/SmallSpinner";
 import Spinner from "../../../Utilities/Spinner/Spinner";
 import useTitle from "../../../Hooks/useTitle";
+import "aos/dist/aos.css";
+import AOS from "aos";
 
 const AddProduct = () => {
+  AOS.init({ duration: 500 });
   useTitle("Add Product");
   const { loading, user } = useContext(AuthContext);
   //   const [CatergoryId, setCatergoryId] = useState(null);
@@ -84,7 +87,10 @@ const AddProduct = () => {
 
   return (
     <div>
-      <div className="lg:w-2/3 md:w-1/4 sm:w-full mx-auto my-10">
+      <div
+        data-aos="fade-up"
+        className="lg:w-2/3 md:w-1/4 sm:w-full mx-auto my-10"
+      >
         <form
           onSubmit={handleSubmit(handleAddProduct)}
           className=" border lg:w-[60%] sm:w-[95%] mx-auto bg-gray-200 dark:bg-gray-600 dark:text-white border-blue-500 py-5 px-5 shadow-lg hover:shadow-2xl rounded-2xl "

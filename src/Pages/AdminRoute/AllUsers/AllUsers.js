@@ -3,8 +3,10 @@ import { useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import UserCard from "./UserCard";
+import useTitle from "../../../Hooks/useTitle";
 
 const AllUsers = () => {
+  useTitle("All Users");
   //   const [users, setUsers] = useState([]);
 
   const { data: users = [], refetch } = useQuery({
