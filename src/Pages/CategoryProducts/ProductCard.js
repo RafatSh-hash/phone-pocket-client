@@ -5,6 +5,7 @@ import { AuthContext } from "../../Context/Context";
 import BookingModal from "./BookingModal/BookingModal";
 import "aos/dist/aos.css";
 import AOS from "aos";
+import toast from "react-hot-toast";
 
 const ProductCard = ({ product }) => {
   AOS.init({ duration: 500 });
@@ -58,6 +59,7 @@ const ProductCard = ({ product }) => {
     })
       .then((res) => res.json())
       .then((data) => {
+        toast.success("Added To Wishlist");
         console.log(data);
       });
   };

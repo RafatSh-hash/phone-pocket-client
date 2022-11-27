@@ -1,6 +1,6 @@
 import { Button } from "flowbite-react";
 import React from "react";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 import "aos/dist/aos.css";
 import AOS from "aos";
 const MyProductCard = ({ product, refetch }) => {
@@ -68,7 +68,6 @@ const MyProductCard = ({ product, refetch }) => {
           <Button gradientMonochrome="success">Advertise</Button>
         </div>
       </div>
-      <Toaster></Toaster>
     </div>
   );
 };

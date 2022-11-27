@@ -121,7 +121,6 @@ const BookingModal = ({ setModalOn, setChoice, user, product }) => {
           </div>
         </div>
       </form>
-      <Toaster></Toaster>
     </div>
   );
 };

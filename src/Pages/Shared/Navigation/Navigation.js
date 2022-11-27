@@ -12,7 +12,7 @@ import { useQuery } from "@tanstack/react-query";
 const Navigation = () => {
   const [theme, setTheme] = useState("light");
   const { user, logOut } = useContext(AuthContext);
-  const [dbUser, setDbUser] = useState({});
+  // const [dbUser, setDbUser] = useState({});
   useEffect(() => {
     if (theme === "dark") {
       document.documentElement.classList.add("dark");
@@ -25,28 +25,28 @@ const Navigation = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
 
-  // const { data: dbUser = {} } = useQuery({
-  //   queryKey: ["dbuser", user?.email],
-  //   queryFn: async () => {
-  //     const res = await fetch(
-  //       `http://localhost:1000/dbuser?email=${user?.email}`
-  //     );
-  //     const data = await res.json();
-  //     return data;
-  //   },
-  // });
+  const { data: dbUser = {} } = useQuery({
+    queryKey: ["dbuser", user?.email],
+    queryFn: async () => {
+      const res = await fetch(
+        `http://localhost:1000/dbuser?email=${user?.email}`
+      );
+      const data = await res.json();
+      return data;
+    },
+  });
 
-  useEffect(() => {
-    fetch(`http://localhost:1000/dbuser?email=${user?.email}`)
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        setDbUser(data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, [user]);
+  // useEffect(() => {
+  //   fetch(`http://localhost:1000/dbuser?email=${user?.email}`)
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       console.log(data);
+  //       setDbUser(data);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // }, [user]);
 
   const handleLogout = () => {
     logOut()
