@@ -6,6 +6,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../Context/Context";
 import logo from "../../../Assets/android-chrome-192x192.png";
+import { MdDarkMode, MdLightMode } from "react-icons/md";
 
 const Navigation = () => {
   const [theme, setTheme] = useState("light");
@@ -105,7 +106,7 @@ const Navigation = () => {
             onClick={handleThemeSwitch}
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 border border-blue-700 rounded-full mx-2"
           >
-            <small> {theme === "dark" ? "L" : "D"}</small>
+            <p> {theme === "dark" ? <MdLightMode /> : <MdDarkMode />}</p>
           </button>
           {user ? (
             <>

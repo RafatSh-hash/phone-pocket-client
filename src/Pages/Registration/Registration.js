@@ -2,14 +2,17 @@ import React, { useContext } from "react";
 import Lottie from "lottie-react";
 import registration from "../../Assets/registration.json";
 //import Spinner from "../../Utilities/Spinner/Spinner.js";
+import toast, { Toaster } from "react-hot-toast";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../Context/Context";
 import { useState } from "react";
 import SmallSpinner from "../../Utilities/SmallSpinner/SmallSpinner";
 import useToken from "../../Hooks/useToken";
 import { useNavigate } from "react-router-dom";
+import useTitle from "../../Hooks/useTitle";
 
 const Registration = () => {
+  useTitle("Registration");
   const { createUser, updateUserProfile, loading, setLoading } =
     useContext(AuthContext);
   const [currentUser, setCurrentUser] = useState(null);
@@ -34,9 +37,11 @@ const Registration = () => {
         const user = result.user;
         setCurrentUser(user);
         console.log(user);
+        toast.success("Registered Successfully");
       })
       .catch((error) => {
         console.log(error);
+        toast.error({ error });
       });
     const image = data.image[0];
     const formData = new FormData();
@@ -193,6 +198,7 @@ const Registration = () => {
               >
                 {loading ? <SmallSpinner></SmallSpinner> : "Register"}
               </button>
+              <Toaster></Toaster>
             </div>
           </form>
         </div>

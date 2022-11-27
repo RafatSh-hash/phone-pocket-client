@@ -6,8 +6,11 @@ import { useState } from "react";
 import useToken from "../../Hooks/useToken";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Button } from "flowbite-react";
+import toast, { Toaster } from "react-hot-toast";
+import useTitle from "../../Hooks/useTitle";
 
 const Login = () => {
+  useTitle("Login");
   const [currentUser, setCurrrentUser] = useState(null);
   const [error, setError] = useState("");
   const { loginWithEmailPass, googleLogin } = useContext(AuthContext);
@@ -32,6 +35,7 @@ const Login = () => {
         console.log(user);
         setLoginEmail(user.email);
         setCurrrentUser(user);
+        toast.success("Logged In Successfully!!");
         navigate(from, { replace: true });
         form.reset();
       })
@@ -157,6 +161,7 @@ const Login = () => {
       <div className="lg:w-1/2 sm:w-full md:w-1/3 p-8 hover:-translate-y-1 hover:scale-110 duration-500">
         <Lottie animationData={login} loop={true} />
       </div>
+      <Toaster></Toaster>
     </div>
   );
 };

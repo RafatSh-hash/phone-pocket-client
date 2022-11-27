@@ -8,8 +8,10 @@ import Iphone from "./Iphone/Iphone";
 import Samsung from "./Samsung/Samsung";
 import { useQuery } from "@tanstack/react-query";
 import AdvertiseCard from "./AdvertiseCard/AdvertiseCard";
+import useTitle from "../../Hooks/useTitle";
 
 const Home = () => {
+  useTitle("Phone Pocket");
   const {
     data: advertisedProducts = [],
     isLoading,

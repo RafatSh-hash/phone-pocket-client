@@ -1,6 +1,7 @@
 import { data } from "autoprefixer";
 import React from "react";
 import { useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../../Context/Context";
@@ -70,6 +71,7 @@ const AddProduct = () => {
             .then((res) => res.json())
             .then((data) => {
               console.log(data);
+              toast.success("Product Added Successfully");
             })
             .catch((error) => {
               console.log(error);
@@ -300,6 +302,7 @@ const AddProduct = () => {
               {loading ? <SmallSpinner></SmallSpinner> : "Add Product"}
             </button>
           </div>
+          <Toaster></Toaster>
         </form>
       </div>
     </div>

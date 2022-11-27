@@ -1,6 +1,6 @@
 import { Button } from "flowbite-react";
 import React from "react";
-
+import toast, { Toaster } from "react-hot-toast";
 const MyProductCard = ({ product }) => {
   const handleDelete = (product) => {
     console.log(product);
@@ -10,7 +10,12 @@ const MyProductCard = ({ product }) => {
         "content-type": "application/json",
         authorization: `bearer ${localStorage.getItem("accessToken")}`,
       },
-    });
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        toast.success("Succeeded Deletion!");
+        console.log(data);
+      });
   };
 
   const handleAdvertise = () => {
@@ -25,6 +30,7 @@ const MyProductCard = ({ product }) => {
     })
       .then((res) => res.json())
       .then((data) => {
+        toast.success("Advertisement Successful!");
         console.log(data);
       });
   };
@@ -55,6 +61,7 @@ const MyProductCard = ({ product }) => {
           <Button gradientMonochrome="success">Advertise</Button>
         </div>
       </div>
+      <Toaster></Toaster>
     </div>
   );
 };

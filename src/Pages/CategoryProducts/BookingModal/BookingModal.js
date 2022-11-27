@@ -1,5 +1,6 @@
 import { Button, Label, TextInput } from "flowbite-react";
 import React from "react";
+import toast, { Toaster } from "react-hot-toast";
 
 const BookingModal = ({ setModalOn, setChoice, user, product }) => {
   const handleOKClick = () => {
@@ -36,9 +37,11 @@ const BookingModal = ({ setModalOn, setChoice, user, product }) => {
     })
       .then((res) => res.json())
       .then((data) => {
+        toast.success("Booked Product Successfully!");
         console.log(data);
       })
       .catch((error) => {
+        toast.success("Please Try Again!");
         console.log(error);
       });
   };
@@ -118,6 +121,7 @@ const BookingModal = ({ setModalOn, setChoice, user, product }) => {
           </div>
         </div>
       </form>
+      <Toaster></Toaster>
     </div>
   );
 };
