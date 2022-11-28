@@ -53,4 +53,6 @@ EXTRA Features </br>
 
 --> There is a "Contact Us" page where people can comment or suggestion. </br>
 
---> A dark mode button in implemented on the navbar.
+--> A dark mode button in implemented on the navbar. </br>
+
+--> Dynamic Route is implemented.
