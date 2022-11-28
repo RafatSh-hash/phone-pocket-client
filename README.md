@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+Site Name : Phone Pocket </br>
+Live Site Link : https://test-4e195.web.app/</br>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Description </br>
 
-## Available Scripts
+--> Phone Pocket is a resale website where users can buy or sell used phones under three categories</br>
 
-In the project directory, you can run:
+--> The landing page displays a banner, advertised products(if seller advertises any product), and under that section three categories are displayed (Google, Samsung, iPhone) .</br>
 
-### `npm start`
+USER Features </br>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+--> User has to be logged in to see all the products posted under respective category.</br>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+--> User has to login as a user.</br>
 
-### `npm test`
+--> User can see product details on the product card.</br>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+--> He/she can book products which will displayed as a list on the Dashboard route on the navbar.</br>
 
-### `npm run build`
+--> User Can also add a product to his/her wishlist, which will be displayed on My Wishlist route. </br>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+--> Blog page displays some question-answers.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+SELLER Features </br>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+--> If anybody wants to be a seller he/she must register on the website as a Seller.</br>
 
-### `npm run eject`
+--> A seller can see the "Add Products" and "My Products" option on the navbar. </br>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+--> On the "Add Products" section seller can add a product with all the credentials needed for an item to be posted on the respective category. Note that a seller has to select the right category for the product. </br>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+--> "My Products" route displays the products which are added by the seller. </br>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+--> A seller can delete his posted product from the website by clicking delete Product. </br>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+--> Seller can advertise his product by clicking advertise which will appear on the home page under banner section. </br>
 
-## Learn More
+ADMIN Features </br>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+--> Admin can see "All Users" and "All Sellers" route on the navigation bar. </br>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+--> All users route displays all the users registered on the website. </br>
 
-### Code Splitting
+--> All Sellers route displays all the sellers registered on the website. </br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+--> Admin can either verify or delete a seller as per his likings. </br>
 
-### Analyzing the Bundle Size
+EXTRA Features </br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+--> Users image are displayed on the right most side of the navbar. </br>
 
-### Making a Progressive Web App
+--> Basic Animation are applied for the products and various other components. </br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+--> There is a "Contact Us" page where people can comment or suggestion. </br>
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+--> A dark mode button in implemented on the navbar.

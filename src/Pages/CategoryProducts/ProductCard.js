@@ -50,7 +50,7 @@ const ProductCard = ({ product }) => {
       email: user?.email,
       condition: product.Condition,
     };
-    fetch(`http://localhost:1000/wishlist`, {
+    fetch(`https://a-12-server.vercel.app/wishlist`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

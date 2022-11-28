@@ -7,7 +7,7 @@ const Iphone = () => {
   const [products, setProducts] = useState([]);
   const [id, setId] = useState("3");
   useEffect(() => {
-    fetch(`http://localhost:1000/iphone`)
+    fetch(`https://a-12-server.vercel.app/iphone`)
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);

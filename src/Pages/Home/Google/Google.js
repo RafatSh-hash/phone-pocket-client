@@ -11,7 +11,7 @@ const Google = () => {
   const [products, setProducts] = useState([]);
   const [id, setId] = useState(1);
   useEffect(() => {
-    Axios.get("http://localhost:1000/google").then((data) => {
+    Axios.get("https://a-12-server.vercel.app/google").then((data) => {
       setProducts(data.data);
       products.map((p) => setId(p.CatId));
       console.log(id);

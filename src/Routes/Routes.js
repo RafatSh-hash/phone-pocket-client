@@ -32,7 +32,7 @@ export const routes = createBrowserRouter([
       },
       {
         path: "/home",
-        loader: () => fetch("http://localhost:1000/allproducts"),
+        loader: () => fetch("https://a-12-server.vercel.app/allproducts"),
         element: <Home></Home>,
       },
       {
@@ -55,7 +55,7 @@ export const routes = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: async ({ params }) => {
-          return fetch(`http://localhost:1000/category/${params.id}`);
+          return fetch(`https://a-12-server.vercel.app/category/${params.id}`);
         },
       },
       {

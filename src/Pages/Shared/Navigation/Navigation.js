@@ -29,7 +29,7 @@ const Navigation = () => {
 
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:1000/dbuser?email=${user?.email}`)
+      fetch(`https://a-12-server.vercel.app/dbuser?email=${user?.email}`)
         .then((res) => res.json())
         .then((data) => {
           console.log(data);

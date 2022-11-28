@@ -8,7 +8,7 @@ const SellerCard = ({ seller, refetch }) => {
   AOS.init({ duration: 500 });
   const handleDeleteSeller = (seller) => {
     console.log(seller);
-    fetch(`http://localhost:1000/sellers/${seller?._id}`, {
+    fetch(`https://a-12-server.vercel.app/sellers/${seller?._id}`, {
       method: "DELETE",
       headers: {
         authorization: `bearer ${localStorage.getItem("accessToken")}`,
@@ -24,7 +24,7 @@ const SellerCard = ({ seller, refetch }) => {
   };
   const handleverifySeller = (seller) => {
     console.log(seller);
-    fetch(`http://localhost:1000/sellers/verify/${seller._id}`, {
+    fetch(`https://a-12-server.vercel.app/sellers/verify/${seller._id}`, {
       method: "PUT",
     })
       .then((res) => res.json())

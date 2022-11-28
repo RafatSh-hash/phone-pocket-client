@@ -6,7 +6,7 @@ import AOS from "aos";
 const UserCard = ({ user, refetch }) => {
   AOS.init({ duration: 500 });
   const handleDeleteUser = () => {
-    fetch(`http://localhost:1000/users/${user._id}`, {
+    fetch(`https://a-12-server.vercel.app/users/${user._id}`, {
       method: "DELETE",
       headers: {
         authorization: `bearer ${localStorage.getItem("accessToken")}`,

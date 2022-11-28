@@ -7,7 +7,7 @@ const MyProductCard = ({ product, refetch }) => {
   AOS.init({ duration: 500 });
   const handleDelete = (product) => {
     console.log(product);
-    fetch(`http://localhost:1000/products/${product._id}`, {
+    fetch(`https://a-12-server.vercel.app/products/${product._id}`, {
       method: "DELETE",
       headers: {
         "content-type": "application/json",
@@ -24,7 +24,7 @@ const MyProductCard = ({ product, refetch }) => {
 
   const handleAdvertise = () => {
     console.log(product);
-    fetch(`http://localhost:1000/advertise`, {
+    fetch(`https://a-12-server.vercel.app/advertise`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

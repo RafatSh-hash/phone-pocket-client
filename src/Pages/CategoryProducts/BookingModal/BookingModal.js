@@ -28,7 +28,7 @@ const BookingModal = ({ setModalOn, setChoice, user, product }) => {
       sellerEmail: product.sellerEmail,
     };
     console.log(booking);
-    fetch("http://localhost:1000/bookings", {
+    fetch("https://a-12-server.vercel.app/bookings", {
       method: "POST",
       headers: {
         "content-type": "application/json",

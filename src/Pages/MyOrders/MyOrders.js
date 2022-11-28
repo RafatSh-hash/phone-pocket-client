@@ -13,7 +13,7 @@ const MyOrders = () => {
   console.log(orders);
   console.log(user?.email);
   useEffect(() => {
-    fetch(`http://localhost:1000/myorders?email=${user?.email}`)
+    fetch(`https://a-12-server.vercel.app/myorders?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

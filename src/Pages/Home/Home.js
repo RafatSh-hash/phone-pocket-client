@@ -24,11 +24,14 @@ const Home = () => {
     queryKey: ["advertisedproducts"],
     queryFn: async () => {
       try {
-        const res = await fetch("http://localhost:1000/advertisedproducts", {
-          headers: {
-            authorization: `bearer ${localStorage.getItem("accessToken")}`,
-          },
-        });
+        const res = await fetch(
+          "https://a-12-server.vercel.app/advertisedproducts",
+          {
+            headers: {
+              authorization: `bearer ${localStorage.getItem("accessToken")}`,
+            },
+          }
+        );
         const data = await res.json();
         console.log(data);
         return data;

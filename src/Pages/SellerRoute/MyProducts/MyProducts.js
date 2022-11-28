@@ -16,7 +16,7 @@ const MyProducts = () => {
     queryKey: ["myproducts"],
     queryFn: async () => {
       const res = await fetch(
-        `http://localhost:1000/myproducts?email=${user?.email}`
+        `https://a-12-server.vercel.app/myproducts?email=${user?.email}`
       );
       const data = res.json();
       return data;

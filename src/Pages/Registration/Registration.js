@@ -81,7 +81,7 @@ const Registration = () => {
     const saveUser = (name, email, role) => {
       const user = { name, email, role };
       console.log(user);
-      fetch("http://localhost:1000/users", {
+      fetch("https://a-12-server.vercel.app/users", {
         method: "PUT",
         headers: {
           "content-type": "application/json",

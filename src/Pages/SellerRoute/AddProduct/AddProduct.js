@@ -65,7 +65,7 @@ const AddProduct = () => {
           //     setCatergoryId(3);
           //   }
           console.log(product);
-          fetch("http://localhost:1000/products", {
+          fetch("https://a-12-server.vercel.app/products", {
             method: "POST",
             headers: {
               "content-type": "application/json",
