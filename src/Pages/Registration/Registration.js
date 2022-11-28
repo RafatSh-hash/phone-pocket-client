@@ -12,6 +12,7 @@ import { useNavigate } from "react-router-dom";
 import useTitle from "../../Hooks/useTitle";
 import "aos/dist/aos.css";
 import AOS from "aos";
+import Spinner from "../../Utilities/Spinner/Spinner";
 
 const Registration = () => {
   AOS.init({ duration: 500 });
@@ -100,6 +101,7 @@ const Registration = () => {
   };
   return (
     <div className=" dark:text-white">
+      {loading && <Spinner></Spinner>}
       <div className="lg:flex lg:flex-row md:flex md:flex-col sm:flex sm:flex-col w-11/12 mt-10 mx-auto h-auto items-center justify-evenly">
         <div className="lg:w-1/2 md:w-1/3 sm:w-full p-8 hover:-translate-y-1 hover:scale-110 duration-500">
           <Lottie animationData={registration} loop={true} />

@@ -14,7 +14,7 @@ import N from "../../../Assets/user.png";
 const Navigation = () => {
   const [theme, setTheme] = useState("light");
   const { user, logOut } = useContext(AuthContext);
-  const [dbUser, setDbUser] = useState({});
+  const [dbUser, setDbUser] = useState(null);
   useEffect(() => {
     if (theme === "dark") {
       document.documentElement.classList.add("dark");
@@ -39,20 +39,23 @@ const Navigation = () => {
   // });
 
   useEffect(() => {
-    fetch(`http://localhost:1000/dbuser?email=${user?.email}`)
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        setDbUser(data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    if (user?.email) {
+      fetch(`http://localhost:1000/dbuser?email=${user?.email}`)
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          setDbUser(data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
   }, [user?.email]);
 
   const handleLogout = () => {
     logOut()
       .then(() => {
+        setDbUser(null);
         localStorage.removeItem("accessToken");
       })
       .catch((error) => {

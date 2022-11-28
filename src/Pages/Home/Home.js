@@ -9,8 +9,12 @@ import Samsung from "./Samsung/Samsung";
 import { useQuery } from "@tanstack/react-query";
 import AdvertiseCard from "./AdvertiseCard/AdvertiseCard";
 import useTitle from "../../Hooks/useTitle";
+import { useContext } from "react";
+import { AuthContext } from "../../Context/Context";
+import Spinner from "../../Utilities/Spinner/Spinner";
 
 const Home = () => {
+  const { loading } = useContext(AuthContext);
   useTitle("Phone Pocket");
   const {
     data: advertisedProducts = [],
@@ -34,6 +38,7 @@ const Home = () => {
 
   return (
     <div className="w-4/5 mx-auto">
+      {loading && <Spinner></Spinner>}
       <div className="my-10 p-10">
         <h1 className="text-4xl text-center text-black ">
           Welcome to Phone Pocket! Buy or Sell your old smartphones here.

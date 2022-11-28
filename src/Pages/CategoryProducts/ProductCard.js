@@ -5,8 +5,10 @@ import BookingModal from "./BookingModal/BookingModal";
 import "aos/dist/aos.css";
 import AOS from "aos";
 import toast from "react-hot-toast";
+import { MdOutlineVerified } from "react-icons/md";
 
 const ProductCard = ({ product }) => {
+  console.log(product, product.status);
   AOS.init({ duration: 500 });
   const { user } = useContext(AuthContext);
   const [modalOn, setModalOn] = useState(false);
