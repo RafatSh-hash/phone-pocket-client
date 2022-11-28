@@ -27,17 +27,6 @@ const Navigation = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
 
-  // const { data: dbUser = {} } = useQuery({
-  //   queryKey: ["dbuser", user?.email],
-  //   queryFn: async () => {
-  //     const res = await fetch(
-  //       `http://localhost:1000/dbuser?email=${user?.email}`
-  //     );
-  //     const data = await res.json();
-  //     return data;
-  //   },
-  // });
-
   useEffect(() => {
     if (user?.email) {
       fetch(`http://localhost:1000/dbuser?email=${user?.email}`)
@@ -159,7 +148,7 @@ const Navigation = () => {
             <Tooltip content={dbUser?.name}>
               <img
                 className="w-11 h-11 hover:translate-y-1 hover:scale-110 duration-500 rounded-full mx-3"
-                src={user?.photoURL ? user.photoURL : null}
+                src={user?.photoURL ? user.photoURL : N}
                 alt=""
               />
             </Tooltip>
